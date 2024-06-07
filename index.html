@@ -1,0 +1,46 @@
+<html>
+<head>
+		<title> Food App by Kamal Sir </title>
+		<style>
+					* {font-size:60px;}
+					body {background-color:lightblue;}
+					input[type="radio"]{width:2%; height:0.5em;}
+		</style>
+</head>
+<body>
+<center>
+			<h1>Food You Like App</h1>
+			<form onsubmit="show()">
+					<input type="text" placeholder="enter ur name" id="name"/>
+					<br/><br/>
+					<input type="radio" name="f" id="si" checked=true/>South Indian
+					<input type="radio" name="f" id="ni" />North Indian
+					<input type="radio" name="f" id="ff" />Fast Food
+					<br/><br/>	
+					<input type = "submit" class="btn"/>
+			</form>
+			<h2 id="msg"/>
+			<script>
+						function show()
+						{
+								event.preventDefault();
+								let name = document.getElementById("name");
+								let ni = document.getElementById("ni");
+								let si = document.getElementById("si");
+								let ff = document.getElementById("ff");
+								let msg = document.getElementById("msg");
+								
+								let choice = "";
+								if(ni.checked)							choice="North Indian";
+								else if(si.checked)						choice="South Indian";
+								else if(ff.checked)						choice="Fast Food";
+								
+								let ans = "name = "+ name.value + " choice = " + choice;
+								msg.innerHTML = ans;
+
+						}
+			</script>
+</center>
+</body>
+</html>
+			
